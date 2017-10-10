@@ -1,0 +1,15 @@
+{
+  "name": "facebook-live-chat",
+  "version": "1.0.0",
+  "description": "A module for getting live chat comments from a Facebook live stream.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ole Henrik Stabell",
+  "license": "MIT",
+  "dependencies": {
+    "event-chains": "0.0.8",
+    "request": "^2.83.0"
+  }
+}
