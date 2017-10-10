@@ -1,6 +1,6 @@
 {
   "name": "facebook-live-chat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A module for getting live chat comments from a Facebook live stream.",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,21 @@
   },
   "author": "Ole Henrik Stabell",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hennamann/facebook-live-chat/issues"
+  },
+  "homepage": "https://github.com/hennamann/facebook-live-chat#readme",
   "dependencies": {
     "event-chains": "0.0.8",
     "request": "^2.83.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hennamann/facebook-live-chat.git"
+  },
+"keywords": [
+    "facebook",
+    "live",
+    "chat"
+  ]
 }
