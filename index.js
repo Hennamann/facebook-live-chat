@@ -4,7 +4,7 @@ const EventEmitter = require('event-chains')
 var fbInterval;
 
 class FacebookLive extends EventEmitter {
-	constructor(userlId, userKey) {
+	constructor(userId, userKey) {
 		super();
 		this.id = userId;
 		this.key = userKey;
