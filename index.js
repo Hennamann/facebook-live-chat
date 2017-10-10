@@ -17,11 +17,11 @@ class FacebookLive extends EventEmitter {
 				this.emit('error', err);
 			} else if (res.statusCode != 200) {
 				this.emit('error', json);
-			} else if (!json.items[0]) {
+			} else if (!json.data[0]) {
 				this.emit('error', 'Can not find live');
 			} else {
-				this.liveId = json.items[0].id;
-				this.getChat();
+				this.liveId = json.data[0].id;
+				this.emit('ready', null);
 			}
 		});
 	}
@@ -42,9 +42,9 @@ class FacebookLive extends EventEmitter {
 		fbInterval = setInterval(()=>{this.getChat()}, timeout);
 		let lastRead = 0, item = {}, time = 0;
 		this.on('json', json => {
-			for (let i=0; i<json.items.length; i++) {
-				item = json.items[i];
-				time = new Date(item.data.createdTime).getTime();
+			for (let i=0; i<json.data.length; i++) {
+				item = json.data[i];
+				time = new Date(item.created_time).getTime();
 				if (lastRead < time) {
 					lastRead = time;
 					this.emit('chat', item);
