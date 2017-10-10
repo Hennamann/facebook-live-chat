@@ -12,7 +12,7 @@ class FacebookLive extends EventEmitter {
 	}
 
 	getLive() {
-		get({url: `https://graph.facebook.com/v2.10/&{this.id}/live_videos?broadcast_status=['LIVE']&access_token=${this.key}`, json: true}, (err, res, json) => {
+		get({url: `https://graph.facebook.com/v2.10/${this.id}/live_videos?broadcast_status=['LIVE']&access_token=${this.key}`, json: true}, (err, res, json) => {
 			if (err) {
 				this.emit('error', err);
 			} else if (res.statusCode != 200) {
@@ -21,13 +21,13 @@ class FacebookLive extends EventEmitter {
 				this.emit('error', 'Can not find live');
 			} else {
 				this.liveId = json.items[0].id;
-				this.getChatId();
+				this.getChat();
 			}
 		});
 	}
 
 	getChat() {
-		get({url: `https://graph.facebook.com/v2.10/&{id}/comments?order=reverse_chronological&access_token=${this.key}`, json: true}, (err, res, json) => {
+		get({url: `https://graph.facebook.com/v2.10/${this.liveId}/comments?order=reverse_chronological&access_token=${this.key}`, json: true}, (err, res, json) => {
 			if (err) {
 				this.emit('error', err);
 			} else if (res.statusCode != 200) {
