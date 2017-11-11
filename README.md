@@ -7,7 +7,7 @@ A module for grabbing live chat comments from a Facebook livestream.
 ```js
 const Facebook = require('facebook-live-chat');
 
-const fb = new YouTube('FACEBOOK_USER_ID_HERE', 'USER_ACCESS_TOKEN_HERE');
+const fb = new Facebook('FACEBOOK_USER_ID_HERE', 'USER_ACCESS_TOKEN_HERE');
 
 fb.on('ready', () => {
 	console.log('ready!');
