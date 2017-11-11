@@ -1,6 +1,6 @@
 {
   "name": "facebook-live-chat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A module for getting live chat comments from a Facebook live stream.",
   "main": "index.js",
   "scripts": {
